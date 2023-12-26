@@ -1,0 +1,36 @@
+.slide {
+    position: relative;
+    height: auto;
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--white);
+}
+
+@media (max-width: 1280px) {
+    .swiper-slide img {
+        min-height: 230px;
+    }
+}
+
+@media (max-width: 620px) {
+    .swiper-slide img {
+        min-height: 250px;
+    }
+}

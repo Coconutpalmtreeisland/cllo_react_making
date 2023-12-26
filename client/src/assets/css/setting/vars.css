@@ -1,0 +1,25 @@
+:root {
+    --main-color: #E12272;
+    --sub-color: #ffe0fd;
+
+    --white: #fdfdfd;
+    --bright: #EAEAEA;
+    --line: #ddd;
+    --gray: #888;
+    --dark-gray: #5b5b5b;
+    --dark: #1B1B1E;
+    --black: #202020;
+
+    font-size: 16px;
+    font-family: "Pretendard";
+    font-weight: normal;
+
+    color: var(--black);
+    background: var(--white);
+}
+
+@media (max-width: 1280px) {
+    :root {
+        font-size: 14px;
+    }
+}
