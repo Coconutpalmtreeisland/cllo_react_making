@@ -43,7 +43,7 @@ router.post("/namecheck", (req, res) => {
         })
 });
 
-router.post("/profile/img", setUpload("react.test.bucket/user"), (req, res, next) => {
+router.post("/profile/img", setUpload("cllo-profile/user"), (req, res, next) => {
     // console.log(res.req);
     res.status(200).json({ success: true, filePath: res.req.file.location })
 });
