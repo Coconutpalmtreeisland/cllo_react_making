@@ -5,9 +5,10 @@ const { User } = require("../model/User.js");
 const { Counter } = require("../model/Counter.js");
 
 // 이미지 업로드
-const setUpload = require("../util/upload.js");
+// const setUpload = require("../util/upload.js");
 
 router.post("/join", (req, res) => {
+    console.log("받은 데이터:", req.body);
     let temp = req.body;
 
     Counter.findOne({ name: "counter" })
@@ -43,24 +44,26 @@ router.post("/namecheck", (req, res) => {
         })
 });
 
-router.post("/profile/img", setUpload("cllo-profile/user"), (req, res, next) => {
-    // console.log(res.req);
-    res.status(200).json({ success: true, filePath: res.req.file.location })
-});
 
-router.post("/profile/update", (req, res) => {
-    let temp = {
-        photoURL: req.body.photoURL,
-    }
 
-    User.updateOne({ uid: req.body.uid }, { $set: temp })
-        .exec()
-        .then(() => {
-            res.status(200).json({ success: true });
-        })
-        .catch((err) => {
-            res.status(400).json({ success: false });
-        })
-})
+// router.post("/profile/img", setUpload("cllo-profile/user"), (req, res, next) => {
+//     // console.log(res.req);
+//     res.status(200).json({ success: true, filePath: res.req.file.location })
+// });
+
+// router.post("/profile/update", (req, res) => {
+//     let temp = {
+//         photoURL: req.body.photoURL,
+//     }
+
+//     User.updateOne({ uid: req.body.uid }, { $set: temp })
+//         .exec()
+//         .then(() => {
+//             res.status(200).json({ success: true });
+//         })
+//         .catch((err) => {
+//             res.status(400).json({ success: false });
+//         })
+// })
 
 module.exports = router;
