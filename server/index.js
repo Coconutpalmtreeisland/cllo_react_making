@@ -3,10 +3,10 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 const app = express();
-const port = 5050;
+const port = 1010;
 // 배포할 때
 // const port = process.env.PORT || 5050;
-// const config = require("./server/config/key.js");
+const config = require("../server/config/key.js");
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 app.use(express.json());
@@ -33,5 +33,5 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
 })
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });

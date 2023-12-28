@@ -176,3 +176,16 @@
     font-weight: 400;
     margin-bottom: 44px;
 }
+
+/* ---------------------------------------------------------- */
+
+.join__form .nameInfo {
+    display: inline-block;
+    font-size: 0.7rem;
+    color: green;
+    margin-bottom: 0;
+}
+
+.join__form .nameInfo.invalid {
+    color: red;
+}

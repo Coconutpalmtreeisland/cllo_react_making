@@ -10,15 +10,15 @@ const UserLogin = () => {
                 <fieldset>
                     <legend className="blind">회원가입</legend>
                     <div className="join__inputInner blind">
-                        <label for="nickName" className="join__label required">닉네임</label>
+                        <label htmlFor="nickName" className="join__label required">닉네임</label>
                         <input type="text" id="nickName" placeholder="한글 2-5자" />
                     </div>
                     <div className="join__inputInner">
-                        <label for="youEmail" className="join__label required">이메일 주소</label>
+                        <label htmlFor="youEmail" className="join__label required">이메일 주소</label>
                         <input type="text" id="youEmail" placeholder="예&#41; cllo@cllo.co.kr" />
                     </div>
                     <div className="join__inputInner">
-                        <label for="youPass" className="join__label required">비밀번호</label>
+                        <label htmlFor="youPass" className="join__label required">비밀번호</label>
                         <input type="text" id="youPass" />
                     </div>
                     <button type="submit" className="join__btn">로그인</button>
@@ -27,7 +27,6 @@ const UserLogin = () => {
             <div className="find__info">
                 <ul>
                     <li className="find__line"><a href="/join">이메일 가입</a></li>
-                    <li className="find__line"><a href="/findEmail">이메일 찾기</a></li>
                     <li className="find__line"><a href="/findPass">비밀번호 찾기</a></li>
                 </ul>
             </div>
