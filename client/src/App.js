@@ -10,7 +10,6 @@ import { gsap } from './util/gsap'
 import Home from './pages/Home'
 import UserLogin from './components/user/UserLogin'
 import UserJoin from './components/user/UserJoin'
-import FindEmail from './components/user/FindEmail'
 import FindPass from './components/user/FindPass'
 
 const App = () => {
@@ -26,7 +25,6 @@ const App = () => {
           <Route path='/' element={<Home />}></Route>
           <Route path='/login' element={<UserLogin />}></Route>
           <Route path='/join' element={<UserJoin />}></Route>
-          <Route path='/findEmail' element={<FindEmail />}></Route>
           <Route path='/findPass' element={<FindPass />}></Route>
         </Routes>
       </Main>

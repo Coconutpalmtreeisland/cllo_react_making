@@ -27,7 +27,6 @@ const UserLogin = () => {
             <div className="find__info">
                 <ul>
                     <li className="find__line"><a href="/join">이메일 가입</a></li>
-                    <li className="find__line"><a href="/findEmail">이메일 찾기</a></li>
                     <li className="find__line"><a href="/findPass">비밀번호 찾기</a></li>
                 </ul>
             </div>

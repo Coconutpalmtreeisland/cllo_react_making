@@ -9,13 +9,12 @@ const UserJoin = () => {
     const [youEmail, setYouEmail] = useState("");
     const [youPass, setYouPass] = useState("");
     const [youPassC, setYouPassC] = useState("");
-    const [youTel, setYouTel] = useState("");
+
     const [flag, setFlag] = useState(false);
     const [nameCheck, setNameCheck] = useState(false);
 
     const [nameInfo, setNameInfo] = useState("");
     const [emailInfo, setEmailInfo] = useState("");
-    const [telInfo, setTelInfo] = useState("");
     const [passInfo, setPassInfo] = useState("");
 
     let navigate = useNavigate();
@@ -25,11 +24,11 @@ const UserJoin = () => {
         setFlag(true);
         e.preventDefault();
 
-        if (!(youName && youEmail && youPass && youPassC && youTel)) {
+        if (!(youName && youEmail && youPass && youPassC)) {
             return alert("모든 항목을 입력하셔야 회원가입이 가능합니다.");
         }
         if (youPass !== youPassC) {
-            return alert("비밀번호가 일치하지 않습니다.")
+            return alert("비밀번호가 일치하지 않습니다.");
         }
         if (!nameCheck) {
             return alert("닉네임 중복 검사를 해주세요!");
@@ -73,12 +72,6 @@ const UserJoin = () => {
     const checkPassword = (password) => {
         const reg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/;
         return reg.test(password);
-    }
-
-    // 핸드폰 번호 유효성 검사
-    const checkPhoneNum = (youTel) => {
-        const reg = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/
-        return reg.test(youTel);
     }
 
     // 닉네임 유효성 검사
@@ -152,9 +145,17 @@ const UserJoin = () => {
                             value={youEmail}
                             onChange={(e) => {
                                 setYouEmail(e.currentTarget.value);
+                            }}
+                            onBlur={async (e) => {
                                 const isValid = checkEmail(e.currentTarget.value);
                                 if (isValid) {
-                                    setEmailInfo('');
+                                    // 서버에 이메일 중복 체크 요청
+                                    const response = await axios.post('/api/user/emailcheck', { email: e.currentTarget.value });
+                                    if (!response.data.check) {  // check는 서버에서 반환하는 필드로, 이메일이 존재하면 true, 존재하지 않으면 false
+                                        setEmailInfo(<span className="nameInfo invalid">이미 가입된 이메일입니다</span>);
+                                    } else {
+                                        setEmailInfo('');
+                                    }
                                 } else {
                                     setEmailInfo(<span className="nameInfo invalid">이메일 주소를 다시 확인해주세요!</span>);
                                 }
@@ -200,29 +201,6 @@ const UserJoin = () => {
                             value={youPassC}
                             onChange={(e) => setYouPassC(e.currentTarget.value)}
                         />
-                    </div>
-                    <div className="join__inputInner">
-                        <label htmlFor="youTel" className="join__label required">휴대폰 번호<em>*</em></label>
-                        <input
-                            type="text"
-                            id="youTel"
-                            name="youTel"
-                            placeholder="010-0000-0000"
-                            autoComplete='off'
-                            required
-                            maxLength={15}
-                            value={youTel}
-                            onChange={(e) => {
-                                setYouTel(e.currentTarget.value);
-                                const isValid = checkPhoneNum(e.currentTarget.value);
-                                if (isValid) {
-                                    setTelInfo('');
-                                } else {
-                                    setTelInfo(<span className="nameInfo invalid">휴대폰 번호 양식에 맞게 작성해주세요!</span>);
-                                }
-                            }}
-                        />
-                        <span className="nameInfo">{telInfo}</span>
                     </div>
                     <button
                         disabled={flag}

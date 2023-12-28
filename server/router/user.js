@@ -44,6 +44,22 @@ router.post("/namecheck", (req, res) => {
         })
 });
 
+router.post("/emailcheck", (req, res) => {
+    User.findOne({ email: req.body.email })
+        .exec()
+        .then((result) => {
+            let check = true;
+            if (result) {
+                check = false;
+            }
+            res.status(200).json({ success: true, check })
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(400).json({ success: false });
+        })
+});
+
 
 
 // router.post("/profile/img", setUpload("cllo-profile/user"), (req, res, next) => {
