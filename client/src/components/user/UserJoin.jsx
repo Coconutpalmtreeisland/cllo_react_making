@@ -115,6 +115,7 @@ const UserJoin = () => {
                     <div className="join__inputInner">
                         <label htmlFor="nickName" className="join__label required">닉네임<em>*</em></label>
                         <input
+                            style={{ imeMode: 'active' }}
                             type="text"
                             id="nickName"
                             name="nickName"
@@ -135,7 +136,8 @@ const UserJoin = () => {
                     <div className="join__inputInner">
                         <label htmlFor="youEmail" className="join__label required">이메일 주소<em>*</em></label>
                         <input
-                            type="text"
+                            style={{ imeMode: 'inactive' }}
+                            type="email"
                             id="youEmail"
                             name="youEmail"
                             placeholder="예&#41; cllo@cllo.co.kr"
@@ -166,7 +168,8 @@ const UserJoin = () => {
                     <div className="join__inputInner">
                         <label htmlFor="youPass" className="join__label required">비밀번호<em>*</em></label>
                         <input
-                            type="text"
+                            style={{ imeMode: 'inactive' }}
+                            type="password"
                             id="youPass"
                             name="youPass"
                             placeholder="영문, 숫자, 특수문자 조합 8-16자"
@@ -175,8 +178,8 @@ const UserJoin = () => {
                             minLength={8}
                             maxLength={16}
                             value={youPass}
-                            onChange={(e) => {
-                                setYouPass(e.currentTarget.value);
+                            onChange={(e) => setYouPass(e.currentTarget.value)}
+                            onBlur={(e) => {
                                 const isValid = checkPassword(e.currentTarget.value);
                                 if (isValid) {
                                     setPassInfo('');
@@ -190,7 +193,8 @@ const UserJoin = () => {
                     <div className="join__inputInner">
                         <label htmlFor="youPassC" className="join__label required">비밀번호 확인<em>*</em></label>
                         <input
-                            type="text"
+                            style={{ imeMode: 'inactive' }}
+                            type="password"
                             id="youPassC"
                             name="youPassC"
                             placeholder="영문, 숫자, 특수문자 조합 8-16자"

@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import firebase from '../../firebase.js'
 
 const UserLogin = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [errorMsg, setErrorMsg] = useState("");
+
     return (
         <div className="join__wrap container">
             <div className="logo">
@@ -15,7 +20,12 @@ const UserLogin = () => {
                     </div>
                     <div className="join__inputInner">
                         <label htmlFor="youEmail" className="join__label required">이메일 주소</label>
-                        <input type="text" id="youEmail" placeholder="예&#41; cllo@cllo.co.kr" />
+                        <input
+                            type="email"
+                            id="youEmail"
+                            placeholder="예&#41;
+                            cllo@cllo.co.kr"
+                        />
                     </div>
                     <div className="join__inputInner">
                         <label htmlFor="youPass" className="join__label required">비밀번호</label>
