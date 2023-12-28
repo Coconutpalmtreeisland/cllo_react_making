@@ -3,6 +3,11 @@
     margin: 0 auto;
 }
 
+#main {
+    min-height: 100vh;
+    padding-bottom: 5rem;
+}
+
 section {
     width: 100%;
     height: auto;
@@ -17,10 +22,22 @@ textarea:focus {
     outline: 0;
 }
 
-#main {
-    min-height: 100vh;
-    padding-bottom: 5rem;
+
+/* 페이지 타이틀 */
+#main > .page_title {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 2.5rem;
 }
+/* 섹션 타이틀 */
+#main .container .section_title {
+    text-align: left;
+    padding: 2rem 0 1rem 0;
+}
+#main .container .section_title h2 {
+    font-size: 1.2rem;
+}
+
 
 @media (max-width: 1280px) {
     .container {
