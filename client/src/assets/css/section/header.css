@@ -82,14 +82,13 @@
     letter-spacing: 1px;
     transition: color 0.2s ease;
     position: relative;
-
 }
 
 .header_item .header__nav ul li:hover ::after {
     color: #000;
 }
 
-.header_item .header__nav ul li.active a {
+.header_item .header__nav ul .active {
     font-weight: 500;
 }
 

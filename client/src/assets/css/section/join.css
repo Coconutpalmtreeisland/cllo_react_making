@@ -50,10 +50,10 @@
     font-size: 1rem;
 }
 
-/* .join__inputInner:first-of-type input {
+.join__inputInner.joinWidth:first-of-type input {
     margin-right: 31px;
-    width: 100%;
-} */
+    width: 66%;
+}
 
 .join__inputInner .check__btn {
     border-radius: 10px;

@@ -68,8 +68,7 @@ const UserJoin = () => {
 
   // 이메일 유효성 검사
   const checkEmail = (email) => {
-    const reg =
-      /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([\-.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    const reg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return reg.test(email);
   };
 
@@ -128,7 +127,7 @@ const UserJoin = () => {
       <form action="/" className="join__form">
         <fieldset>
           <legend className="blind">회원가입</legend>
-          <div className="join__inputInner">
+          <div className="join__inputInner joinWidth">
             <label htmlFor="nickName" className="join__label required">
               닉네임<em>*</em>
             </label>
@@ -229,7 +228,7 @@ const UserJoin = () => {
               비밀번호 확인<em>*</em>
             </label>
             <input
-              type="text"
+              type="password"
               id="youPassC"
               name="youPassC"
               placeholder="영문, 숫자, 특수문자 조합 8-16자"
