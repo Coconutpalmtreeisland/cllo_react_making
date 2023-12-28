@@ -8,7 +8,7 @@ const { Counter } = require("../model/Counter.js");
 // const setUpload = require("../util/upload.js");
 
 router.post("/join", (req, res) => {
-    console.log("받은 데이터:", req.body);
+    // console.log("받은 데이터:", req.body);
     let temp = req.body;
 
     Counter.findOne({ name: "counter" })

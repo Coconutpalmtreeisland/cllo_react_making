@@ -58,7 +58,7 @@ const UserJoin = () => {
                     alert("회원가입이 완료되었습니다.");
                     navigate("/login");
                 } else {
-                    alert("회원가입이 실패하였습니다.");
+                    alert("회원가입을 실패하였습니다.");
                 }
             })
     }

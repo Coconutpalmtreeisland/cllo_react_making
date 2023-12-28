@@ -3,7 +3,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 const app = express();
-const port = 5050;
+const port = 1010;
 // 배포할 때
 // const port = process.env.PORT || 5050;
 const config = require("../server/config/key.js");
