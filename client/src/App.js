@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { loginUser, clearUser } from './reducer/userSlice'
+import firebase from './firebase.js'
 
 import Header from './components/layout/Header'
 import Main from './components/layout/Main'
@@ -13,6 +16,19 @@ import UserJoin from './components/user/UserJoin'
 import FindPass from './components/user/FindPass'
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((userInfo) => {
+      console.log(userInfo)
+      if (userInfo !== null) {
+        dispatch(loginUser(userInfo.multiFactor.user));
+      } else {
+        dispatch(clearUser()) //로그아웃
+      }
+    })
+  }, [dispatch]);
+
   useEffect(() => {
     gsap();
   })
