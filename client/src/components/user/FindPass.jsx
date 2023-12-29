@@ -2,10 +2,10 @@ import React from 'react'
 
 const FindPass = () => {
     return (
-        <div className="join__wrap container">
+        <div className="join__wrap join__container">
             <h3>비밀번호 찾기</h3>
             <span className="find__line"></span>
-            <span>가입 시 등록한 이메일 주소를 입력하면<br /> 해당 이메일로 비밀번호를 알려드립니다.</span>
+            <span className='find__span'>가입 시 등록한 이메일 주소를 입력하면<br /> 해당 이메일로 비밀번호를 알려드립니다.</span>
             <form action="/" className="join__form">
                 <fieldset>
                     <legend className="blind">회원가입</legend>

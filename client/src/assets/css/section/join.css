@@ -1,3 +1,8 @@
+.join__container {
+    width: 1220px;
+    margin: 0 auto;
+}
+
 .join__wrap {
     padding: 66px 390px 164px;
     width: 100%;
@@ -23,6 +28,10 @@
     margin-bottom: 26px;
 }
 
+.join__inputInner:first-of-type {
+    margin-bottom: 0;
+}
+
 .join__label {
     display: block;
     font-size: 1rem;
@@ -33,6 +42,11 @@
     font-size: 1rem;
     font-weight: 600;
     color: var(--main-color);
+}
+
+.join__inputInner .nickname__wrap {
+    display: flex;
+    justify-content: space-between;
 }
 
 .join__inputInner input {
@@ -50,17 +64,18 @@
 }
 
 .join__inputInner:first-of-type input {
-    margin-right: 31px;
     width: 66%;
 }
 
 .join__inputInner .check__btn {
+    min-width: 20%;
     border-radius: 10px;
-    padding: 10px 24px;
+    padding: 10px;
     font-size: 1rem;
     font-weight: 500;
     color: var(--white);
     background-color: var(--gray);
+    margin-left: 4%;
 }
 
 .join__wrap .join__btn {
@@ -136,7 +151,7 @@
 .join__wrap .social__btn span {
     position: absolute;
     left: 20px;
-    top: 18px;
+    top: 15px;
     width: 20px;
     height: 20px;
     background-size: contain;
@@ -170,7 +185,7 @@
     background-color: var(--dark);
 }
 
-.join__wrap span {
+.join__wrap .find__span {
     display: block;
     font-size: 1rem;
     font-weight: 400;
@@ -186,6 +201,42 @@
     margin-bottom: 0;
 }
 
+.join__form .join__inputInner:first-of-type .nameInfo {
+    margin-bottom: 26px;
+}
+
+.join__form .join__inputInner:first-of-type .nameInfo.invalid {
+    margin-bottom: 0;
+}
+
 .join__form .nameInfo.invalid {
     color: red;
+}
+
+@media (max-width: 1280px) {
+    .join__wrap {
+        padding: 66px 120px 164px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .join__wrap {
+        padding: 66px 50px 164px;
+    }
+
+    .join__wrap .social__btn {
+        display: flex;
+        justify-content: center;
+        position: unset;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+
+    .join__wrap .social__btn span {
+        position: unset;
+        margin-right: 10px;
+        width: 15px;
+        height: 15px;
+    }
 }

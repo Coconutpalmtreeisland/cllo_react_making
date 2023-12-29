@@ -107,30 +107,32 @@ const UserJoin = () => {
     }
 
     return (
-        <div className="join__wrap container">
+        <div className="join__wrap join__container">
             <h3>회원가입</h3>
             <form action="/" className="join__form">
                 <fieldset>
                     <legend className="blind">회원가입</legend>
                     <div className="join__inputInner">
                         <label htmlFor="nickName" className="join__label required">닉네임<em>*</em></label>
-                        <input
-                            style={{ imeMode: 'active' }}
-                            type="text"
-                            id="nickName"
-                            name="nickName"
-                            placeholder="한글 2-5자"
-                            autoComplete='off'
-                            required
-                            minLength={2}
-                            maxLength={5}
-                            value={youName}
-                            onChange={(e) => setYouName(e.currentTarget.value)}
-                        />
-                        <button
-                            className="check__btn"
-                            onClick={(e) => NameCheckFunc(e)}
-                        >중복검사</button>
+                        <div className="nickname__wrap">
+                            <input
+                                style={{ imeMode: 'active' }}
+                                type="text"
+                                id="nickName"
+                                name="nickName"
+                                placeholder="한글 2-5자"
+                                autoComplete='off'
+                                required
+                                minLength={2}
+                                maxLength={5}
+                                value={youName}
+                                onChange={(e) => setYouName(e.currentTarget.value)}
+                            />
+                            <button
+                                className="check__btn"
+                                onClick={(e) => NameCheckFunc(e)}
+                            >중복검사</button>
+                        </div>
                         <span className="nameInfo">{nameInfo}</span>
                     </div>
                     <div className="join__inputInner">

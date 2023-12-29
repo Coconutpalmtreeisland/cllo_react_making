@@ -30,7 +30,7 @@ const UserLogin = () => {
     }, [errorMsg]);
 
     return (
-        <div className="join__wrap container">
+        <div className="join__wrap join__container">
             <div className="logo">
                 <Link to="/">&#32;</Link>
             </div>
