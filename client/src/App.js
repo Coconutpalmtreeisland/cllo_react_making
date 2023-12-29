@@ -14,6 +14,7 @@ import Home from './pages/Home'
 import UserLogin from './components/user/UserLogin'
 import UserJoin from './components/user/UserJoin'
 import FindPass from './components/user/FindPass'
+import CommunityWrite from './components/community/CommunityWrite.jsx'
 
 const App = () => {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const App = () => {
           <Route path='/login' element={<UserLogin />}></Route>
           <Route path='/join' element={<UserJoin />}></Route>
           <Route path='/findPass' element={<FindPass />}></Route>
+          <Route path='/communityWrite' element={<CommunityWrite />}></Route>
         </Routes>
       </Main>
       <Footer />
