@@ -1,0 +1,96 @@
+.CommuWrite__wrap {
+    max-width: 1220px;
+}
+
+.write__header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 29px;
+}
+
+.write__header svg {
+    width: 34.667px;
+    height: 26px;
+}
+
+.write__header h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.write__header span {
+    font-size: 1rem;
+}
+
+.write__header span:first-child {
+    margin-right: 15px;
+}
+
+/*  */
+.preImgBox__wrap {
+    font-size: 0;
+    position: relative;
+}
+
+.preImgBox__wrap .carousel {
+    white-space: nowrap;
+    font-size: 0;
+    cursor: pointer;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.carousel .dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel .dragging img {
+    pointer-events: none;
+}
+
+.preImgBox__wrap svg {
+    background: var(--white);
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.preImgBox__wrap svg:first-child {
+    display: none;
+    left: -13px;
+}
+
+.preImgBox__wrap svg:last-child {
+    right: -13px;
+}
+
+.carousel img {
+    width: calc(100% /5);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-left: 15px;
+}
+
+.carousel img:first-child {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .carousel img {
+        width: calc(100% /4);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .carousel img {
+        width: calc(100% /3);
+    }
+}
