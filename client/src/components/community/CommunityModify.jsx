@@ -107,7 +107,7 @@ const CommunityWrite = () => {
         <div className="CommuWrite__wrap container">
             <div className="write__header">
                 <button><IoCameraSharp /></button>
-                <h3>게시글 작성</h3>
+                <h3>게시글 수정</h3>
                 <div>
                     <button>취소</button>
                     <button>등록</button>
