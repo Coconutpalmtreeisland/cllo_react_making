@@ -17,6 +17,7 @@ import FindEmail from "./components/user/FindEmail";
 import FindPass from "./components/user/FindPass";
 import Commu from "./components/community/Commu";
 import UserPage from "./components/user/UserPage";
+import CommuDetail from "./components/community/CommuDetail.jsx";
 
 const App = () => {
   useEffect(() => {
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/findEmail" element={<FindEmail />}></Route>
           <Route path="/findPass" element={<FindPass />}></Route>
           <Route path="/community" element={<Commu />}></Route>
+          <Route path="/post" element={<CommuDetail />}></Route>
           <Route path="/mypage" element={<UserPage />}></Route>
         </Routes>
       </Main>

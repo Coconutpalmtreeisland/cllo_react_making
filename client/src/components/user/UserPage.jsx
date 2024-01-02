@@ -31,7 +31,6 @@ const UserPage = () => {
     } else {
       console.log("유저!!! : ", user);
       setProImage(user.photoURL);
-      console.log(proImage);
       setBgImage(user.bgoURL);
     }
   }, [user]);

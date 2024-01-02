@@ -36,7 +36,7 @@ const CommuSwiper = () => {
         className="commuSwiper"
       >
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num chart_in_color">1</div>
             <div class="rank_info">
               <div class="rank_text">
@@ -53,7 +53,7 @@ const CommuSwiper = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num chart_in_color">2</div>
             <div class="rank_info">
               <div class="rank_text">
@@ -70,7 +70,7 @@ const CommuSwiper = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num chart_in_color">3</div>
             <div class="rank_info">
               <div class="rank_text">
@@ -87,7 +87,7 @@ const CommuSwiper = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num">4</div>
             <div class="rank_info">
               <div class="rank_text">
@@ -104,7 +104,7 @@ const CommuSwiper = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num">5</div>
             <div class="rank_info">
               <div class="rank_text">
@@ -121,7 +121,7 @@ const CommuSwiper = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num">6</div>
             <div class="rank_info">
               <div class="rank_text">
@@ -138,7 +138,7 @@ const CommuSwiper = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num">7</div>
             <div class="rank_info">
               <div class="rank_text">
@@ -155,7 +155,7 @@ const CommuSwiper = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num">8</div>
             <div class="rank_info">
               <div class="rank_text">
@@ -172,7 +172,7 @@ const CommuSwiper = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num">9</div>
             <div class="rank_info">
               <div class="rank_text">
@@ -189,7 +189,7 @@ const CommuSwiper = () => {
           </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <Link to="/">
+          <Link to="/post">
             <div class="rank_num">10</div>
             <div class="rank_info">
               <div class="rank_text">

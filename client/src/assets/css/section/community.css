@@ -145,3 +145,177 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+/* 커뮤니티 글 상세보기 */
+
+.page_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid var(--line);
+}
+.page_info .left .title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.page_info .left .title span {
+    color: var(--main-color);
+}
+.page_info .left .auth {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+.page_info .left .auth .auth_profile {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--main-color);
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+.page_info .left .auth .post_date {
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    color: var(--gray);
+    font-weight: 200;
+    border-left: 1px solid var(--line);
+}
+.page_info .left .auth .post_view {
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    color: var(--gray);
+    font-weight: 200;
+    border-left: 1px solid var(--line);
+}
+.page_info .right {
+    padding: 1rem;
+}
+
+/* swiper */
+.detailSwiper {
+    padding: 2.5rem 0 2.5rem 0 !important;
+    margin-bottom: 2rem;
+}
+.detailSwiper .swiper-button-prev, .swiper-button-next {
+    color: var(--main-color) !important;
+}
+.detailSwiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.detailSwiper .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: auto;
+}
+.detailSwiper .swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+/* contents */
+.page_contents p {
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+}
+.reaction_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+}
+.reaction_btn button {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1rem;
+    border-radius: 3rem;
+    background-color: var(--bright);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    color: var(--dark-gray);
+    transition: 0.2s ease;
+}
+.reaction_btn button:hover {
+    background-color: var(--sub-color);
+    color: var(--main-color);
+}
+
+/* reple */
+.reple_box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.reple_box input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+}
+.reple_box button {
+    width: 20%;
+    max-width: 150px;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    border-radius: 10px;
+    color: var(--white);
+    background-color: var(--main-color);
+    transition: 0.2s ease;
+}
+.reple_box button:hover {
+    opacity: 0.8;
+}
+.reple_list {
+    width: 100%;
+    padding: 2rem 0;
+}
+.reple_list .reple {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 0.5rem;
+}
+.reple_edit {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background-color: transparent;
+}
+.reple_list .reple .reple_info {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-end;
+}
+.reple_list .reple .reple_auth {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+.reple_list .reple .reple_date {
+    font-size: 0.85rem;
+    color: var(--gray);
+    font-weight: 200;
+}

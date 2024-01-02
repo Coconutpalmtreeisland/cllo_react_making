@@ -21,7 +21,7 @@ const Commu = () => {
       </div>
       <ul className="post_grid">
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -34,7 +34,7 @@ const Commu = () => {
           </Link>
         </li>
         <li className="isImg">
-          <Link to="/">
+          <Link to="/post">
             <img src={c01Img} alt="new_post" />
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
@@ -58,7 +58,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -71,7 +71,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -84,7 +84,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -97,7 +97,7 @@ const Commu = () => {
           </Link>
         </li>
         <li className="isImg">
-          <Link to="/">
+          <Link to="/post">
             <img src={c02Img} alt="new_post" />
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
@@ -111,7 +111,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -124,7 +124,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -137,7 +137,7 @@ const Commu = () => {
           </Link>
         </li>
         <li className="isImg">
-          <Link to="/">
+          <Link to="/post">
             <img src={c03Img} alt="new_post" />
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
@@ -151,7 +151,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -174,7 +174,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -187,7 +187,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -200,7 +200,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -213,7 +213,7 @@ const Commu = () => {
           </Link>
         </li>
         <li className="isImg">
-          <Link to="/">
+          <Link to="/post">
             <img src={c04Img} alt="new_post" />
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
@@ -227,7 +227,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -240,7 +240,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -253,7 +253,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -266,7 +266,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
@@ -279,7 +279,7 @@ const Commu = () => {
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/post">
             <div className="post_title">오늘 날씨에 머플러 어때요?</div>
             <p>
               오늘 머플러 두를까 하는데 아직 그 정도로 춥지 않나? 다들 뭐 입고
