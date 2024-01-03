@@ -92,22 +92,22 @@ const Header = () => {
           <nav className="header__nav" role="navigation" aria-label="메인 메뉴">
             <ul>
               <li>
-                <NavLink exact to="/" activeClassName="active">
+                <NavLink exact="true" to="/" activeclassname="active">
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/style" activeClassName="active">
+                <NavLink to="/style" activeclassname="active">
                   Style
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/community" activeClassName="active">
+                <NavLink to="/community" activeclassname="active">
                   Community
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/mypage" activeClassName="active">
+                <NavLink to="/mypage" activeclassname="active">
                   Mypage
                 </NavLink>
               </li>

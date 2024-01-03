@@ -41,10 +41,9 @@ const UserJoin = () => {
     await createdUser.user.updateProfile({
       displayName: youName,
       photoURL: "https://kr.object.ncloudstorage.com/simsim/user/proImg.jpg",
-      bgURL: "https://kr.object.ncloudstorage.com/simsim/user/bgImg.jpg",
     });
 
-    console.log("sss :", createdUser.user);
+    console.log("회원가입 유저 :", createdUser.user);
 
     // mongoDB 회원가입
     let body = {
@@ -53,6 +52,7 @@ const UserJoin = () => {
       uid: createdUser.user.multiFactor.user.uid, // firebase에서 만든 아이디
       photoURL: "https://kr.object.ncloudstorage.com/simsim/user/proImg.jpg",
       bgURL: "https://kr.object.ncloudstorage.com/simsim/user/bgImg.jpg",
+      infoText: "",
     };
 
     // 회원가입

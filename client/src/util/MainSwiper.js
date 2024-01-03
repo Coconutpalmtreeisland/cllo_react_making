@@ -34,7 +34,7 @@ export function MainSwiper() {
       <SwiperSlide>
         <img src={slide03} alt="slide 3" />
       </SwiperSlide>
-      <div class="swiper-pagination"></div>
+      <div className="swiper-pagination"></div>
     </Swiper>
   );
 }

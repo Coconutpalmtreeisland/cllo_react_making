@@ -39,7 +39,7 @@ const UserLogin = () => {
         <fieldset>
           <legend className="blind">로그인</legend>
           <div className="join__inputInner">
-            <label for="youEmail" className="join__label required">
+            <label htmlFor="youEmail" className="join__label required">
               이메일 주소
             </label>
             <input
@@ -51,7 +51,7 @@ const UserLogin = () => {
             />
           </div>
           <div className="join__inputInner">
-            <label for="youPass" className="join__label required">
+            <label htmlFor="youPass" className="join__label required">
               비밀번호
             </label>
             <input

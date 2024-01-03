@@ -1,11 +1,15 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 // import firebase from "../../firebase.js";
 import { useNavigate } from "react-router-dom";
 
 const UserPage = () => {
-  const [proImage, setProImage] = useState("");
-  const [bgImage, setBgImage] = useState("");
+  // const [proImage, setProImage] = useState("");
+  // const [bgImage, setBgImage] = useState("");
+  // const [youName, setYouName] = useState("");
+
+  const [userInfo, setUserInfo] = useState("");
 
   // 탭 메뉴
   const [activeTab, setActiveTab] = useState("mypageTab1");
@@ -22,18 +26,35 @@ const UserPage = () => {
       navigate("/login");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user]);
 
   useEffect(() => {
-    if (user.isLoading && !user.accessToken) {
-      //   navigate("/login");
-      console.log(user);
-    } else {
-      console.log("유저!!! : ", user);
-      setProImage(user.photoURL);
-      setBgImage(user.bgoURL);
-    }
+    let body = {
+      uid: user.uid,
+    };
+    axios
+      .post("/api/user/userpage", body)
+      .then((response) => {
+        if (response.data.success) {
+          console.log(response);
+          setUserInfo(response.data.userInfo);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [user]);
+
+  // useEffect(() => {
+  //   if (user.isLoading && !user.accessToken) {
+  //     navigate("/login");
+  //   } else {
+  //     console.log("유저!!! : ", user);
+  //     setProImage(user.photoURL);
+  //     setBgImage(user.bgURL);
+  //     setYouName(user.displayName);
+  //   }
+  // }, [user]);
 
   return (
     <>
@@ -85,53 +106,58 @@ const UserPage = () => {
         >
           {activeTab === "mypageTab1" && (
             <>
-              <div class="profile_wrap">
-                <div class="profile_view">
-                  <div class="photo_area">
-                    <label class="photo_bg" for="user_pro">
+              <div className="profile_wrap">
+                <div className="profile_view">
+                  <div className="photo_area">
+                    <label className="photo_bg" htmlFor="user_pro">
                       <input id="user_bg" type="file" />
-                      <img src={proImage} alt="photo_bg" />
+                      <img src={userInfo.bgURL} alt="photo_bg" />
                     </label>
-                    <label class="photo_profile" for="user_bg">
+                    <label className="photo_profile" htmlFor="user_bg">
                       <input id="user_pro" type="file" />
-                      <img src={bgImage} alt="photo_profile" />
+                      <img src={userInfo.photoURL} alt="photo_profile" />
                     </label>
                   </div>
-                  <div class="photo_btn">
+                  <div className="photo_btn">
                     <button>🖍 프로필 사진변경</button>
                     <button>🖍 배경 사진변경</button>
                   </div>
                 </div>
-                <div class="profile_info">
+                <div className="profile_info">
                   <h2>프로필 변경</h2>
-                  <div class="info_line info_name">
+                  <div className="info_line info_name">
                     <label>닉네임 변경하기</label>
                     <div>
-                      <input type="text" placeholder="새 닉네임" />
+                      <input
+                        type="text"
+                        placeholder="새 닉네임"
+                        defaultValue={userInfo.displayName}
+                      />
                       <button>중복 검사</button>
                     </div>
                   </div>
 
-                  <div class="info_line info_text">
+                  <div className="info_line info_text">
                     <label>소개 글 작성</label>
                     <input
                       type="text"
                       placeholder="나의 스타일 소개를 작성해주세요!"
+                      defaultValue={userInfo.infoText}
                     />
                   </div>
 
-                  <div class="info_line info_style">
+                  <div className="info_line info_style">
                     <label>스타일</label>
-                    <div class="style_check">
+                    <div className="style_check">
                       <ul>
-                        <li class="active">데일리</li>
-                        <li class="active">큐티</li>
+                        <li className="active">데일리</li>
+                        <li className="active">큐티</li>
                       </ul>
                     </div>
-                    <ul class="style_list">
-                      <li class="active">데일리</li>
+                    <ul className="style_list">
+                      <li className="active">데일리</li>
                       <li>청순</li>
-                      <li class="active">큐티</li>
+                      <li className="active">큐티</li>
                       <li>섹시</li>
                       <li>톰보이</li>
                       <li>스트릿</li>
@@ -144,7 +170,7 @@ const UserPage = () => {
                   </div>
                 </div>
               </div>
-              <div class="profile_save">
+              <div className="profile_save">
                 <button>저장하기</button>
               </div>
             </>
