@@ -34,3 +34,95 @@
         min-height: 250px;
     }
 }
+
+/* 커뮤 글 작성, 수정 */
+.preImgBox__wrap .swiper-button-prev,
+.preImgBox__wrap .swiper-button-next {
+    background-color: var(--dark-gray);
+    opacity: 0.9;
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+}
+
+.preImgBox__wrap .swiper-button-prev:after,
+.preImgBox__wrap .swiper-button-next:after {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: var(--white);
+}
+
+.preImgBox__wrap .swiper-slide {
+    width: 250px !important;
+    height: 250px !important;
+}
+
+.preImgBox__wrap .swiper-slide img {
+    position: relative;
+    width: 250px;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    object-position: center;
+}
+
+.preImgBox__wrap .swiper-slide button {
+    cursor: pointer;
+}
+
+.preImgBox__wrap .swiper-slide svg {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    color: var(--white);
+    opacity: 0.8;
+}
+
+@media (max-width: 1020px) {
+    .preImgBox__wrap .swiper-slide {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .preImgBox__wrap .swiper-slide img {
+        width: 200px;
+        height: 200px;
+        min-height: unset;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .preImgBox__wrap .swiper-button-prev,
+    .preImgBox__wrap .swiper-button-next {
+        height: 25px;
+        width: 25px;
+    }
+
+    .preImgBox__wrap .swiper-button-prev {
+        left: 0;
+        top: 50%;
+        transform: translateY(50%);
+    }
+
+    .preImgBox__wrap .swiper-button-next {
+        right: 0;
+        top: 50%;
+        transform: translateY(50%);
+    }
+
+    .preImgBox__wrap .swiper-slide {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .preImgBox__wrap .swiper-slide img {
+        width: 100px;
+        height: 100px;
+        min-height: unset;
+    }
+
+    .preImgBox__wrap .swiper-slide svg {
+        top: 10px;
+        right: 10px;
+    }
+}
