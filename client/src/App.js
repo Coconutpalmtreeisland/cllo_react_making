@@ -14,8 +14,11 @@ import Home from './pages/Home'
 import UserLogin from './components/user/UserLogin'
 import UserJoin from './components/user/UserJoin'
 import FindPass from './components/user/FindPass'
-import CommunityWrite from './components/community/CommunityWrite.jsx'
+
+import UserPage from "./components/user/UserPage";
+
 import Commu from './components/community/Commu.jsx'
+import CommunityWrite from './components/community/CommunityWrite.jsx'
 import CommuDetail from './components/community/CommuDetail.jsx'
 
 const App = () => {
@@ -27,9 +30,9 @@ const App = () => {
       if (userInfo !== null) {
         dispatch(loginUser(userInfo.multiFactor.user));
       } else {
-        dispatch(clearUser()) //로그아웃
+        dispatch(clearUser()); //로그아웃
       }
-    })
+    });
   }, [dispatch]);
 
   useEffect(() => {
@@ -48,6 +51,7 @@ const App = () => {
           <Route path='/community' element={<Commu />}></Route>
           <Route path='/communityWrite' element={<CommunityWrite />}></Route>
           <Route path='/communityPost' element={<CommuDetail />}></Route>
+          <Route path="/mypage" element={<UserPage />}></Route>
         </Routes>
       </Main>
       <Footer />
