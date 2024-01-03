@@ -1,0 +1,242 @@
+.mypage_tab {
+    overflow: hidden;
+    border-bottom: 1px solid var(--bright);
+}
+
+/* 탭 버튼의 스타일링 */
+.mypage_tab_btn {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.mypage_tab_btn::after {
+    display: block;
+    content: "";
+    width: 0%;
+    height: 5px;
+    background: var(--gray);
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.4s ease;
+}
+
+.mypage_tab_btn:hover::after {
+    width: 50%;
+}
+
+/* 활성 탭 버튼 스타일 */
+.mypage_tab_btn.active::after {
+    display: block;
+    content: "";
+    width: 50%;
+    height: 5px;
+    background: #000;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 탭 내용의 스타일링 */
+.mypage_content {
+    /* display: none; */
+    /* padding: 20px; */
+    width: 100%;
+    height: auto;
+    border-top: none;
+}
+
+
+/* page 1 */
+.profile_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile_view {
+    padding-top: 2rem;
+    width: 30%;
+}
+
+.profile_info {
+    width: 70%;
+    padding: 2rem;
+}
+
+
+/* profile_view */
+.profile_view .photo_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.profile_view .photo_area input {
+    display: none;
+}
+
+.profile_view .photo_area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile_view .photo_bg {
+    width: 70%;
+    min-height: 320px;
+    max-height: 320px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #eeeeee;
+}
+
+.profile_view .photo_profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    background-color: var(--gray);
+    margin-top: -70px;
+}
+
+.profile_view .photo_btn {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.profile_view .photo_btn button {
+    font-size: 0.9rem;
+    width: 80%;
+    border: 1px solid var(--main-color);
+    background: var(--white);
+    color: var(--main-color);
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.profile_view .photo_btn button:hover {
+    background: var(--main-color);
+    color: var(--white);
+}
+
+/* profile_info */
+.profile_info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--main-color);
+}
+
+.profile_info .info_line {
+    margin-bottom: 1.5rem;
+}
+
+.profile_info .info_line label {
+    width: 100%;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: .8rem;
+    color: var(--dark);
+}
+
+.profile_info .info_line input,
+.style_check {
+    /* width: 100%; */
+    border-bottom: 1px solid var(--line);
+    padding: 0.7rem 0.5rem;
+}
+
+.profile_info .info_line input::placeholder {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.info_name div {
+    display: flex;
+    width: 100%;
+}
+
+.info_name input {
+    width: 100%;
+}
+
+.info_name button {
+    width: 150px;
+    margin-left: 2rem;
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 5px;
+    transition: .2s ease;
+}
+
+.info_name button:hover {
+    background-color: var(--dark-gray);
+}
+
+.info_text input {
+    width: 100%;
+}
+
+.style_check {
+    margin-bottom: 1rem;
+}
+
+.info_style ul li {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background-color: var(--bright);
+    color: var(--gray);
+    border-radius: 20px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.info_style ul.style_list li {
+    margin: 0.3rem;
+}
+
+.info_style .style_check li {
+    margin-right: 0.6rem;
+}
+
+.info_style ul li:hover,
+.info_style ul li.active {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+/* profile_save */
+.profile_save {
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_save button {
+    width: 20%;
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 1rem 1.2rem;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.profile_save button:hover {
+    background-color: var(--dark-gray);
+}
