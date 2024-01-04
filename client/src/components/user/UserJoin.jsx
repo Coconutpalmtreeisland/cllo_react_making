@@ -35,20 +35,26 @@ const UserJoin = () => {
         }
 
         // firebase 회원가입
-        let createdUser = await firebase.auth().createUserWithEmailAndPassword(youEmail, youPass);
+        let createdUser = await firebase
+            .auth()
+            .createUserWithEmailAndPassword(youEmail, youPass);
 
         await createdUser.user.updateProfile({
             displayName: youName,
+            photoURL: "https://kr.object.ncloudstorage.com/cllo-profile/proImg.jpg",
         });
 
-        console.log(createdUser.user);
+        console.log("회원가입 유저 :", createdUser.user);
 
         // mongoDB 회원가입
         let body = {
             email: createdUser.user.multiFactor.user.email,
             displayName: createdUser.user.multiFactor.user.displayName,
             uid: createdUser.user.multiFactor.user.uid, // firebase에서 만든 아이디
-        }
+            photoURL: "https://kr.object.ncloudstorage.com/cllo-profile/proImg.jpg",
+            bgURL: "https://kr.object.ncloudstorage.com/cllo-profile/bgImg.jpg",
+            infoText: "",
+        };
 
         axios
             .post("/api/user/join", body)

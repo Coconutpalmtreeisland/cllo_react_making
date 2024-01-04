@@ -392,6 +392,17 @@
     text-align: center;
 }
 
+.write__header label {
+    display: inline-block;
+    font-size: 1rem;
+    background: none;
+    cursor: pointer;
+}
+
+.write__header input {
+    display: none;
+}
+
 .write__header button {
     display: inline-block;
     font-size: 1rem;
@@ -408,6 +419,14 @@
     flex-wrap: wrap;
     align-items: flex-start;
     flex-direction: column;
+}
+
+.write__content form {
+    width: 100%;
+}
+
+.write__content fieldset {
+    border: 0;
 }
 
 .write__content input {

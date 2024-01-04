@@ -5,7 +5,7 @@ const { User } = require("../model/User.js");
 const { Counter } = require("../model/Counter.js");
 
 // 이미지 업로드
-// const setUpload = require("../util/upload.js");
+const setUpload = require("../util/upload.js");
 
 router.post("/join", (req, res) => {
     // console.log("받은 데이터:", req.body);
@@ -17,15 +17,29 @@ router.post("/join", (req, res) => {
 
             const userData = new User(temp);
             userData.save().then(() => {
-                Counter.updateOne({ name: "counter" }, { $inc: { userNum: 1 } }).then(() => {
-                    res.status(200).json({ success: true })
-                })
-            })
+                Counter.updateOne({ name: "counter" }, { $inc: { userNum: 1 } })
+                    .then(() => {
+                        res.status(200).json({ success: true })
+                    });
+            });
         })
         .catch((err) => {
             console.log(err);
             res.status(400).json({ success: false });
+        });
+});
+
+// 유저페이지
+router.post("/userpage", (req, res) => {
+    User.findOne({ uid: req.body.uid })
+        .exec()
+        .then((result) => {
+            res.status(200).json({ success: true, userInfo: result });
         })
+        .catch((err) => {
+            console.log(err);
+            res.status(400).json({ success: false });
+        });
 });
 
 router.post("/namecheck", (req, res) => {
@@ -36,12 +50,12 @@ router.post("/namecheck", (req, res) => {
             if (result) {
                 check = false;
             }
-            res.status(200).json({ success: true, check })
+            res.status(200).json({ success: true, check });
         })
         .catch((err) => {
             console.log(err);
             res.status(400).json({ success: false });
-        })
+        });
 });
 
 router.post("/emailcheck", (req, res) => {
@@ -52,20 +66,23 @@ router.post("/emailcheck", (req, res) => {
             if (result) {
                 check = false;
             }
-            res.status(200).json({ success: true, check })
+            res.status(200).json({ success: true, check });
         })
         .catch((err) => {
             console.log(err);
             res.status(400).json({ success: false });
-        })
+        });
 });
 
 
 
-// router.post("/profile/img", setUpload("cllo-profile/user"), (req, res, next) => {
-//     // console.log(res.req);
-//     res.status(200).json({ success: true, filePath: res.req.file.location })
-// });
+router.post(
+    "/profile/img",
+    setUpload("cllo-profile/user"),
+    (req, res, next) => {
+        res.status(200).json({ success: true, filePath: res.req.file.location });
+    }
+);
 
 // router.post("/profile/update", (req, res) => {
 //     let temp = {

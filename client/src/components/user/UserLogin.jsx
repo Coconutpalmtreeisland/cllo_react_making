@@ -25,8 +25,8 @@ const UserLogin = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            setErrorMsg("")
-        }, 5000)
+            setErrorMsg("");
+        }, 5000);
     }, [errorMsg]);
 
     return (

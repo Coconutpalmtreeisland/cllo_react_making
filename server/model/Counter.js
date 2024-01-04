@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const countSchema = new mongoose.Schema(
     {
         name: String,
+        commuNum: Number,
         userNum: Number,
     },
     { collection: "counter" }

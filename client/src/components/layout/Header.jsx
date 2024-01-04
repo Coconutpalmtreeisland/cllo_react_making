@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
 import firebase from '../../firebase.js'
 
 import logo from "../../assets/img/logo.svg";
@@ -14,14 +14,15 @@ const Header = () => {
     const headerRef = useRef(null);
 
     // 로그인 확인
-    const user = useSelector(state => state.user);
+    const user = useSelector((state) => state.user);
     // console.log(user.accessToken);
     const navigate = useNavigate();
 
     const LogoutHandler = () => {
         firebase.auth().signOut();
         navigate("/");
-    }
+    };
+    // console.log(user);
 
     // 스크롤
     useEffect(() => {
@@ -61,6 +62,7 @@ const Header = () => {
         };
     }, [didScroll, lastScrollTop]);
 
+
     return (
         <header id="header" role="banner" ref={headerRef}>
 
@@ -73,8 +75,10 @@ const Header = () => {
                     </ul>
                 ) : (
                     <ul className="container">
-                        <li><Link to="/mypage" style={{ display: "flex" }}
-                        >{user.displayName}님<FcLike style={{ color: "#E12272", fontSize: "1rem", marginLeft: "5px" }} /></Link></li>
+                        <li>
+                            <Link to="/mypage" style={{ display: "flex" }}
+                            >{user.displayName}님<FcLike style={{ color: "#E12272", fontSize: "1rem", marginLeft: "5px" }} /></Link>
+                        </li>
                         <li><Link onClick={() => LogoutHandler()}>로그아웃</Link></li>
                     </ul>
                 )}
@@ -90,10 +94,26 @@ const Header = () => {
                     </div>
                     <nav className="header__nav" role="navigation" aria-label="메인 메뉴">
                         <ul>
-                            <li className="active"><Link to="/">Home</Link></li>
-                            <li><Link to="/style">Style</Link></li>
-                            <li><Link to="/community">Community</Link></li>
-                            <li><Link to="/mypage">Mypage</Link></li>
+                            <li>
+                                <NavLink exact="true" to="/" activeclassname="active">
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/style" activeclassname="active">
+                                    Style
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/community" activeclassname="active">
+                                    Community
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/mypage" activeclassname="active">
+                                    Mypage
+                                </NavLink>
+                            </li>
                             <li>
                                 <button className="search_icon">
                                     <img src={search} alt="search" />

@@ -37,170 +37,170 @@ const CommuSwiper = () => {
             >
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num chart_in_color">1</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num chart_in_color">1</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c01Img} alt="popular_board" />
                         </div>
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num chart_in_color">2</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num chart_in_color">2</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c02Img} alt="popular_board" />
                         </div>
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num chart_in_color">3</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num chart_in_color">3</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c01Img} alt="popular_board" />
                         </div>
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num">4</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num">4</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c03Img} alt="popular_board" />
                         </div>
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num">5</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num">5</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c01Img} alt="popular_board" />
                         </div>
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num">6</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num">6</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c03Img} alt="popular_board" />
                         </div>
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num">7</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num">7</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c02Img} alt="popular_board" />
                         </div>
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num">8</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num">8</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c01Img} alt="popular_board" />
                         </div>
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num">9</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num">9</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c03Img} alt="popular_board" />
                         </div>
                     </Link>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Link to="/post">
-                        <div class="rank_num">10</div>
-                        <div class="rank_info">
-                            <div class="rank_text">
+                        <div className="rank_num">10</div>
+                        <div className="rank_info">
+                            <div className="rank_text">
                                 <h3>헤메코 레전드</h3>
                             </div>
-                            <div class="rank_reaction">
+                            <div className="rank_reaction">
                                 <span>👁 234</span>
                                 <span>🗨 18</span>
                             </div>
                         </div>
-                        <div class="rank_img">
+                        <div className="rank_img">
                             <img src={c02Img} alt="popular_board" />
                         </div>
                     </Link>

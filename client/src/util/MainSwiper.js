@@ -9,10 +9,10 @@ import slide01 from '../assets/img/slide01.jpg'
 import slide02 from '../assets/img/slide02.jpg'
 import slide03 from '../assets/img/slide03.jpg'
 
-export function MySwiper() {
+export function MainSwiper() {
     return (
         <Swiper
-            className="mySwiper"
+            className="mainSwiper"
             effect="fade"
             loop={true}
             autoplay={{
@@ -34,7 +34,7 @@ export function MySwiper() {
             <SwiperSlide>
                 <img src={slide03} alt="slide 3" />
             </SwiperSlide>
-            <div class="swiper-pagination"></div>
+            <div className="swiper-pagination"></div>
         </Swiper>
     );
 }

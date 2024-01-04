@@ -32,7 +32,7 @@ export const userSlice = createSlice({
             state.photoURL = "";
             state.bgURL = "";
             state.styleTag = "";
-            state.isLoading = true;
+            state.isLoading = false;
         },
     },
 });

@@ -22,11 +22,15 @@ import CommunityWrite from './components/community/CommunityWrite.jsx'
 import CommuDetail from './components/community/CommuDetail.jsx'
 
 const App = () => {
+  useEffect(() => {
+    gsap();
+  });
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((userInfo) => {
-      // console.log(userInfo)
+      // console.log(userInfo);
       if (userInfo !== null) {
         dispatch(loginUser(userInfo.multiFactor.user));
       } else {
@@ -35,9 +39,6 @@ const App = () => {
     });
   }, [dispatch]);
 
-  useEffect(() => {
-    gsap();
-  })
 
   return (
     <>

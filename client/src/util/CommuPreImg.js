@@ -11,7 +11,7 @@ import example from '../assets/img/c01.jpg'
 
 
 
-const CommuWrite = () => {
+const CommuPreImg = () => {
     const [windowSize, setWindowSize] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -67,4 +67,4 @@ const CommuWrite = () => {
     )
 }
 
-export default CommuWrite
+export default CommuPreImg

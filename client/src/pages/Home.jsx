@@ -24,13 +24,13 @@ import c01 from '../assets/img/c01.jpg'
 import c02 from '../assets/img/c02.jpg'
 import c03 from '../assets/img/c03.jpg'
 import c04 from '../assets/img/c04.jpg'
-import { MySwiper } from '../util/MySwiper'
+import { MainSwiper } from '../util/MainSwiper'
 
 const Home = () => {
     return (
         <>
             <div className="slide">
-                <MySwiper />
+                <MainSwiper />
             </div>
 
             <section>
