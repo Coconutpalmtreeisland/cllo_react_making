@@ -27,7 +27,7 @@ function setMultiUpload(bucket) {
                 cb(null, Date.now().toString() + extenstion);
             }
         })
-    }).array("image", 10) // CommuImage.jsx formData에 있는 거랑 이름 똑같이 image맞춰야 함. 최대 10개의 파일을 업로드하도록 설정
+    }).array("image", 10) // CommunityImage.jsx formData에 있는 거랑 이름 똑같이 image맞춰야 함. 최대 10개의 파일을 업로드하도록 설정
     return upload
 }
 

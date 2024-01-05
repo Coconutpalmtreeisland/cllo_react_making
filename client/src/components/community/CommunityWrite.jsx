@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 import CommuPreImg from '../../util/CommuPreImg';
-import CommuImage from './CommuImage';
+import CommunityImage from './CommunityImage';
 
 const CommunityWrite = () => {
     const [title, setTitle] = useState("");
@@ -36,11 +36,11 @@ const CommunityWrite = () => {
             uid: user.uid,
         }
 
-        axios.post("/api/commu/write", body)
+        axios.post("/api/community/write", body)
             .then((resopnse) => {
                 if (resopnse.data.success) {
                     alert("글 작성이 완료되었습니다.");
-                    navigate("/list");
+                    navigate("/community");
                 } else {
                     alert("글 작성이 실패하였습니다.");
                 }
@@ -50,7 +50,7 @@ const CommunityWrite = () => {
     return (
         <div className="CommuWrite__wrap container">
             <div className="write__header">
-                <CommuImage setImage={setImage} />
+                <CommunityImage setImage={setImage} />
                 <h3>게시글 작성</h3>
                 <div>
                     <button>취소</button>

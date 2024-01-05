@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { IoCameraSharp } from "react-icons/io5";
 
-const CommuImage = (props) => {
+const CommunityImage = (props) => {
 
     const FileUpload = (e) => {
         const formData = new FormData();
@@ -12,7 +12,7 @@ const CommuImage = (props) => {
         }
 
         axios
-            .post("/api/commu/image/upload", formData)
+            .post("/api/community/image/multiUpload", formData)
             .then((response) => {
                 console.log(response);
                 props.setImage(response.data.filePath);
@@ -33,4 +33,4 @@ const CommuImage = (props) => {
     )
 }
 
-export default CommuImage
+export default CommunityImage

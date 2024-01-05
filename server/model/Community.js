@@ -20,7 +20,7 @@ const cummuSchema = new mongoose.Schema(
             default: 0,
         }
     },
-    { collection: "commus" }
+    { collection: "commus", timestamps: true }
 );
 
 const Community = mongoose.model("Community", cummuSchema);

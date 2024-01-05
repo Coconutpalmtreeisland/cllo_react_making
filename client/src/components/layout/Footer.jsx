@@ -11,10 +11,10 @@ const Footer = () => {
                     서로의 코디를 공유하며 이야기를 나눌 수 있는 사이트입니다.</p>
                 <ul className="content_info">
                     <li>
-                        <a href="#">이용약관</a>
+                        <a href="/">이용약관</a>
                     </li>
                     <li>
-                        <a href="#">개인정보 처리방침</a>
+                        <a href="/">개인정보 처리방침</a>
                     </li>
                 </ul>
             </div>

@@ -17,9 +17,10 @@ import FindPass from './components/user/FindPass'
 
 import UserPage from "./components/user/UserPage";
 
-import Commu from './components/community/Commu.jsx'
+import Community from './components/community/Community.jsx'
 import CommunityWrite from './components/community/CommunityWrite.jsx'
-import CommuDetail from './components/community/CommuDetail.jsx'
+import CommunityArea from './components/community/CommunityArea.jsx'
+import CommunityModify from './components/community/CommunityModify.jsx'
 
 const App = () => {
   useEffect(() => {
@@ -49,9 +50,10 @@ const App = () => {
           <Route path='/login' element={<UserLogin />}></Route>
           <Route path='/join' element={<UserJoin />}></Route>
           <Route path='/findPass' element={<FindPass />}></Route>
-          <Route path='/community' element={<Commu />}></Route>
+          <Route path='/community' element={<Community />}></Route>
           <Route path='/communityWrite' element={<CommunityWrite />}></Route>
-          <Route path='/communityPost' element={<CommuDetail />}></Route>
+          <Route path='/detail/:commuNum' element={<CommunityArea />}></Route>
+          <Route path='/modify/:commuNum' element={<CommunityModify />}></Route>
           <Route path="/mypage" element={<UserPage />}></Route>
         </Routes>
       </Main>

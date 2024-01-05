@@ -8,6 +8,7 @@ const { User } = require("../model/User.js");
 
 const setMultiUpload = require("../util/multiUpload.js");
 
+// 글 쓰기
 router.post("/write", (req, res) => {
     let temp = {
         title: req.body.title,
@@ -25,11 +26,11 @@ router.post("/write", (req, res) => {
                 .then((userInfo) => {
                     temp.author = userInfo._id; // 작가 추가
 
-                    const BlogWrite = new Post(temp);
+                    const BlogWrite = new Community(temp);
                     BlogWrite
                         .save()
                         .then(() => {
-                            Counter.updateOne({ name: "counter" }, { $inc: { postNum: 1 } }).then(() => {
+                            Counter.updateOne({ name: "counter" }, { $inc: { commuNum: 1 } }).then(() => {
                                 res.status(200).json({ success: true });
                             })
                         })
@@ -41,8 +42,56 @@ router.post("/write", (req, res) => {
         })
 })
 
-// 이미지 업로드
-router.post("/image/upload", setUpload("cllo-community/post"), (req, res, next) => {
+// 글 목록
+router.post("/list", (req, res) => {
+    Community
+        .find()
+        .populate("author")
+        .exec()
+        .then((result) => {
+            res.status(200).json({ success: true, community: result })
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(400).json({ success: false });
+        })
+})
+
+// 글 상세페이지
+router.post("/detail", (req, res) => {
+    console.log(req.body);
+    Community
+        .findOne({ commuNum: req.body.commuNum })
+        .populate("author")
+        .exec()
+        .then((result) => {
+            res.status(200).json({ success: true, community: result });
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(400).json({ success: false });
+        })
+})
+
+// 글 수정하기
+router.post("/modify", (req, res) => {
+    let temp = {
+        title: req.body.title,
+        content: req.body.content
+    }
+    Community.updateOne({ commuNum: Number(req.body.commuNum) }, { $set: temp })
+        .exec()
+        .then(() => {
+            res.status(200).json({ success: true });
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(400).json({ success: false });
+        })
+})
+
+// 이미지 여러 장 업로드
+router.post("/image/multiUpload", setMultiUpload("cllo-community/post"), (req, res, next) => {
     let filePathArray = req.files.map(file => file.location);  // req.files를 사용하고, 업로드된 파일들의 url을 배열로 저장
     res.status(200).json({ success: true, filePath: filePathArray })  // filePath를 배열로 반환
 })

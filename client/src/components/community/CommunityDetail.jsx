@@ -1,7 +1,45 @@
 import React, { useEffect } from "react";
 import PostSwiper from "../../util/PostSwiper";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
-const CommuDetail = () => {
+import moment from "moment";
+import "moment/locale/ko";
+
+const CommunityDetail = (props) => {
+    let params = useParams();
+    let navigate = useNavigate();
+
+    const SetTime = (a, b) => {
+        if (a !== b) {
+            return moment(b).format("YYYY MMMM Do, hh:mm") + "(수정됨)";
+        } else {
+            return moment(a).format("YYYY MMMM Do, hh:mm");
+        }
+    }
+
+    const DeleteHandler = () => {
+        if (window.confirm("게시글을 삭제하시겠습니까?")) {
+            let body = {
+                commuNum: params.commuNum,
+            }
+            axios.post('/api/community/delete', body)
+                .then((response) => {
+                    console.log(response);
+                    if (response.data.success) {
+                        alert('게시글이 삭제되었습니다.');
+                        navigate('/community');
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                    alert('게시글 삭제가 실패했습니다.');
+                })
+        }
+    }
+
+    console.log(props);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -11,32 +49,27 @@ const CommuDetail = () => {
                 <div className="page_info">
                     <div className="left">
                         <h2 className="title">
-                            요즘 날씨에 딱입니다!! 머플러 코디 보고가세요 <span>(8)</span>
+                            {props.commuInfo.title}<span>(8)</span>
                         </h2>
                         <div className="auth">
                             {/* <div className="auth_profile"></div> */}
                             <div className="auth_name">글쓴이</div>
                             <div className="post_view">조회 58</div>
-                            <div className="post_date">2024.04.11</div>
+                            <div className="post_date">{SetTime(props.commuInfo.createdAt, props.commuInfo.updatedAt)}</div>
                         </div>
                     </div>
-                    <div className="right">···</div>
+                    <div className="right">···
+                        <Link
+                            to={`/modify/${props.commuInfo.commuNum}`}>
+                            수정
+                        </Link>
+                        <button onClick={() => DeleteHandler()}>삭제</button>
+                    </div>
                 </div>
                 <PostSwiper />
                 <div className="page_contents">
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione
-                        quisquam voluptates alias! Quaerat, tenetur quibusdam quas, minima
-                        dignissimos ipsa repellendus temporibus nobis explicabo iste
-                        similique, beatae dolor blanditiis! Neque, vero. Lorem ipsum dolor
-                        sit, amet consectetur adipisicing elit. Ratione quisquam voluptates
-                        alias! Quaerat, tenetur quibusdam quas, minima dignissimos ipsa
-                        repellendus temporibus nobis explicabo iste similique, beatae dolor
-                        blanditiis! Neque, vero. Lorem ipsum dolor sit, amet consectetur
-                        adipisicing elit. Ratione quisquam voluptates alias! Quaerat,
-                        tenetur quibusdam quas, minima dignissimos ipsa repellendus
-                        temporibus nobis explicabo iste similique, beatae dolor blanditiis!
-                        Neque, vero.
+                        {props.commuInfo.content}
                     </p>
                     <div className="reaction_btn">
                         <button>
@@ -95,4 +128,4 @@ const CommuDetail = () => {
     );
 };
 
-export default CommuDetail;
+export default CommunityDetail;

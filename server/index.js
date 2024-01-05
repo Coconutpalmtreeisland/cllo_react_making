@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 // express router
 // app.use("/api/post", require("./server/router/post.js"));
 app.use("/api/user", require("./router/user.js"));
+app.use("/api/community", require("./router/commuity.js"));
 // app.use("/api/reple", require("./server/router/reple.js"));
 
 app.listen(port, () => {
